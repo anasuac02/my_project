@@ -1,18 +1,19 @@
 const mysql = require("mysql2");
 
-const connection = mysql.createConnection({
-  host: "localhost",
+const db = mysql.createConnection({
+  host: "caboose.proxy.rlwy.net",
   user: "root",
-  password: "MOHAR2006",
-  database: "portfolio_db"
+  password: "dvNOFkqOvLvAuBwJjLQIWEgZnZqwZMXc",
+  database: "railway",
+  port: 25232
 });
 
-connection.connect((err) => {
+db.connect((err) => {
   if (err) {
-    console.error("Error connecting:", err);
-    return;
+    console.error("DB connection failed:", err);
+  } else {
+    console.log("Connected to Railway MySQL");
   }
-  console.log("Connected to MySQL");
 });
 
-module.exports = connection;
+module.exports = db;

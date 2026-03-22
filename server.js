@@ -1,4 +1,4 @@
-// const db = require("./db"); // ❌ TEMPORARILY DISABLED
+// const db = require("./db"); // TEMPORARILY DISABLED
 
 const express = require("express");
 const bodyParser = require("body-parser");
