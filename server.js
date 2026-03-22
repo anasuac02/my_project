@@ -1,8 +1,7 @@
-// const db = require("./db"); // TEMPORARILY DISABLED
-
 const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
+const db = require("./db");
 
 const app = express();
 
@@ -13,19 +12,28 @@ app.use(express.static("public"));
 
 // Test route
 app.get("/", (req, res) => {
-  res.send("Server is running 🚀");
+  res.send("Server is running ");
 });
 
-// Contact route (DB disabled for deployment)
+// Contact route
 app.post("/contact", (req, res) => {
   const { name, email, message } = req.body;
 
-  console.log("Form received:", { name, email, message });
+  const sql = "INSERT INTO contacts (name, email, message) VALUES (?, ?, ?)";
 
-  res.send("Form received successfully (DB coming soon)");
+  db.query(sql, [name, email, message], (err, result) => {
+    if (err) {
+      console.error("DB Error:", err);
+      res.status(500).send("Error saving data");
+      return;
+    }
+
+    console.log("✅ Data inserted:", result);
+    res.send("Message sent successfully!");
+  });
 });
 
-// IMPORTANT: use Render's PORT
+// Port (Render uses this)
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {
