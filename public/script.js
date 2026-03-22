@@ -54,3 +54,35 @@ document.querySelectorAll('.nav-right a').forEach(anchor => {
     });
   });
 });
+
+
+// CONTACT FORM SUBMIT
+const form = document.getElementById("contactForm");
+
+if (form) {
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault(); // stop page refresh
+
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const message = document.getElementById("message").value;
+
+    try {
+      const res = await fetch("/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ name, email, message })
+      });
+
+      const data = await res.text();
+      alert(data);
+
+      form.reset();
+    } catch (err) {
+      console.error("❌ Error:", err);
+      alert("Error sending message");
+    }
+  });
+}
