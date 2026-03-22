@@ -1,41 +1,31 @@
+// const db = require("./db"); // ❌ TEMPORARILY DISABLED
+
 const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
-const db = require("./db");
 
 const app = express();
 
+// Middleware
 app.use(cors());
 app.use(bodyParser.json());
 app.use(express.static("public"));
 
-// ROOT ROUTE
+// Test route
 app.get("/", (req, res) => {
-  res.sendFile(__dirname + "/public/index.html");
+  res.send("Server is running 🚀");
 });
 
-// CONTACT ROUTE
+// Contact route (DB disabled for deployment)
 app.post("/contact", (req, res) => {
   const { name, email, message } = req.body;
 
-  // Basic validation
-  if (!name || !email || !message) {
-    return res.status(400).send("All fields are required");
-  }
+  console.log("Form received:", { name, email, message });
 
-  const sql = "INSERT INTO contacts (name, email, message) VALUES (?, ?, ?)";
-
-  db.query(sql, [name, email, message], (err, result) => {
-    if (err) {
-      console.error("Database error:", err);
-      return res.status(500).send("Error saving data");
-    }
-
-    res.send("Message sent successfully");
-  });
+  res.send("Form received successfully (DB coming soon)");
 });
 
-// PORT
+// IMPORTANT: use Render's PORT
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {
