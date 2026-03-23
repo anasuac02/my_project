@@ -26,7 +26,7 @@ window.addEventListener("scroll", () => {
 });
 
 
-// NAVBAR HIDE/SHOW
+// NAVBAR HIDE&SHOW
 let lastScroll = 0;
 const navbar = document.getElementById("navbar");
 
@@ -81,7 +81,7 @@ if (form) {
 
       form.reset();
     } catch (err) {
-      console.error("❌ Error:", err);
+      console.error("Error:", err);
       alert("Error sending message");
     }
   });
