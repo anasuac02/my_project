@@ -7,7 +7,7 @@
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
-  background: hotpink !important;
+  background: linear-gradient(to bottom, #0f0f14, #151521);
   color: #f5f5f5;
   text-align: center;
 }
@@ -146,8 +146,8 @@ body {
 
 /* GLASS EFFECT */
 .glass {
-  background: rgba(133, 37, 37, 0.690);
-  backdrop-filter: blur(11px);
+  background: rgba(255, 182, 255, 0.15);
+  backdrop-filter: blur(12px);
   padding: 20px;
   border-radius: 12px;
 }
