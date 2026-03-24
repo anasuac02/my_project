@@ -1,3 +1,7 @@
+/* TEST CHANGE */
+body {
+  background: hotpink !important;
+}
 /* GLOBAL FIX */
 * {
   box-sizing: border-box;
@@ -146,8 +150,8 @@ body {
 
 /* GLASS EFFECT */
 .glass {
-  background: rgba(255,255,255,0.05);
-  backdrop-filter: blur(12px);
+  background: rgba(133, 37, 37, 0.690);
+  backdrop-filter: blur(11px);
   padding: 20px;
   border-radius: 12px;
 }

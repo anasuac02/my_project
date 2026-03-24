@@ -35,6 +35,20 @@ This project uses GitHub Actions to:
 
 ---
 
+## Project Structure
+
+my_project/
+├── public/
+│ ├── index.html
+│ ├── style.css
+│ └── script.js
+├── db.js
+├── server.js
+├── package.json
+└── .github/workflows/ci.yml
+
+---
+
 ## 📬 Contact
 
 Feel free to reach out via the contact form on the website!
