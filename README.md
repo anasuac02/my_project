@@ -45,7 +45,9 @@ my_project/
 ├── db.js
 ├── server.js
 ├── package.json
-└── .github/workflows/ci.yml
+└── .github/
+└── workflows/
+└── ci.yml
 
 ---
 
