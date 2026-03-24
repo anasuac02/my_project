@@ -37,17 +37,19 @@ This project uses GitHub Actions to:
 
 ## Project Structure
 
+```
 my_project/
 ├── public/
-│ ├── index.html
-│ ├── style.css
-│ └── script.js
+│   ├── index.html
+│   ├── style.css
+│   └── script.js
 ├── db.js
 ├── server.js
 ├── package.json
 └── .github/
-└── workflows/
-└── ci.yml
+    └── workflows/
+        └── ci.yml
+``
 
 ---
 
