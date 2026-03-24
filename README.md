@@ -27,7 +27,7 @@ A full-stack personal portfolio website built with Node.js, Express, and MySQL.
 
 ---
 
-## CI Pipeline
+## CI/CD Pipeline
 
 This project uses GitHub Actions to:
 - Install dependencies
